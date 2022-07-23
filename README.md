@@ -16,3 +16,7 @@ To create superuser run following command
 ```
 docker compose exec backend python manage.py createsuperuser
 ```
+
+## API documentation
+
+If project is ran locally, swagger documentation should be accessible on http://127.0.0.1:8080/swagger/
