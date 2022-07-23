@@ -1,1 +1,3 @@
-# constricon
+# Constricon
+
+Online contructor of icons
