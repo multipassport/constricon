@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'taggit',
 
     'accounts',
+    'icons',
     'templates',
 ]
 
@@ -88,7 +89,7 @@ USE_TZ = True
 
 STATIC_URL = env.str('DJANGO_STATIC_URL', '/static/')
 
-STATIC_ROOT = '/static'
+STATIC_ROOT = 'static'
 
 MEDIA_URL = env.str('DJANGO_MEDIA_URL', '/media/')
 
