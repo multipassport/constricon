@@ -11,23 +11,18 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD-OwOtBep9Frut}
 
   backend:
-    build: backend
-    image: app_backend
+    build: ./backend
     volumes:
-      - static_data:/static
-      - ./backend:/code
-    environment:
-      SECRET_KEY: ${SECRET_KEY-REPLACE_ME}
-      DEBUG: ${DEBUG-TRUE}
-      DATABASE_URL: ${DATABASE_URL-postgres://constricon:OwOtBep9Frut@db:5432/constricon}
-      ALLOWED_HOSTS: ${ALLOWED_HOSTS-127.0.0.1,localhost}
+      - ./backend:/usr/src/constricon
+    command:
+      python manage.py runserver 0.0.0.0:8080
+    env_file:
+      - .env
+      - .env.example
     ports:
       - 8080:8080
     depends_on:
       - db
-    command:
-      python manage.py runserver 0.0.0.0:8080
 
 volumes:
   db_data:
-  static_data:
