@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from accounts import serializers
+from django.contrib.auth import get_user_model
+from rest_framework import generics
 
-# Create your views here.
+
+class UserUpdateView(generics.UpdateAPIView):
+    serializer_class = serializers.UserUpdateSerializer
+    queryset = get_user_model()
+    http_method_names = ['put']
