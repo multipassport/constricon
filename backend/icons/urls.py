@@ -15,6 +15,6 @@ urlpatterns = [
     path(
         'icons/<int:icon_pk>/parts/<int:pk>/',
         views.IconPartUpdateView.as_view(),
-        name='icon-detail',
+        name='part-detail',
     ),
 ]

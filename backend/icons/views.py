@@ -14,7 +14,7 @@ class IconListCreateView(generics.ListCreateAPIView):
 
 class IconRetrieveUpdateView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Icon.objects.all()
-    http_method_names = ['PUT', 'GET', 'DELETE']
+    http_method_names = ['put', 'get', 'delete']
 
     def get_serializer_class(self):
         if self.request.method == 'PUT':
@@ -25,4 +25,4 @@ class IconRetrieveUpdateView(generics.RetrieveUpdateDestroyAPIView):
 class IconPartUpdateView(generics.UpdateAPIView):
     queryset = IconPart.objects.all()
     serializer_class = serializers.IconPartSerializer
-    http_method_names = ['PUT']
+    http_method_names = ['put']
