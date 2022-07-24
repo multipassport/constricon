@@ -35,4 +35,5 @@ urlpatterns = [
         name='schema-redoc',
     ),
     path('api/', include('icons.urls')),
+    path('api/', include('templates.urls')),
 ]
