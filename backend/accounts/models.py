@@ -1,6 +1,7 @@
 from accounts.managers import UserManager
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from enums import League
 
 
 class UserAccount(AbstractUser):
@@ -18,6 +19,12 @@ class UserAccount(AbstractUser):
     avatar = models.ImageField(
         'аватарка',
         blank=True,
+    )
+    league = models.CharField(
+        'лига',
+        choices=League.choices,
+        default=League.FIRST,
+        max_length=10,
     )
 
     objects = UserManager()
