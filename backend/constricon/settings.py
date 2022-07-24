@@ -23,6 +23,7 @@ INSTALLED_APPS = [
 
     'drf_yasg',
     'taggit',
+    'rest_framework',
 
     'accounts',
     'icons',
