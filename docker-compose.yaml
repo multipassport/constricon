@@ -16,9 +16,11 @@ services:
       - ./backend:/usr/src/constricon
     command:
       python manage.py runserver 0.0.0.0:8080
-    env_file:
-      - .env
-      - .env.example
+    environment:
+      SECRET_KEY: ${SECRET_KEY-REPLACE_ME}
+      DEBUG: ${DEBUG-TRUE}
+      DATABASE_URL: ${DATABASE_URL-postgres://constricon:OwOtBep9Frut@db:5432/constricon}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS-127.0.0.1,localhost}
     ports:
       - 8080:8080
     depends_on:
